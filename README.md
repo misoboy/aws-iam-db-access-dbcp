@@ -20,7 +20,7 @@ You need to modify the jdbc connection properties. `application-test.profiles`
 
 ```properties
 # Region
-datasource.rds.region=
+datasource.rds.region=ap-northeast-2
 # AWS RDS Service Endpoint
 datasource.rds.endpoint=
 # AWS RDS Service Port
