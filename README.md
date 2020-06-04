@@ -72,5 +72,5 @@ Go to the project workspace root path.
 Run Maven Junit Test case.
 
 ```cmd
-mvn clean test -Daws.profile=If omitted, the default profile is used.
+$ mvn clean test -Daws.profile=If omitted, the default profile is used.
 ```
