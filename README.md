@@ -10,7 +10,9 @@ git clone https://github.com/misoboy/aws-iam-db-access-dbcp.git
 
 ## Overview
 
-AWS RDS, Redshift IAM Access authentication method is applied to Apache Common DBCP2 to create a token when a connection pool is created, and connect to the database.
+AWS RDS, Redshift IAM Access authentication method is applied to Apache Common DBCP to create a token when a connection pool is created, and connect to the database.
+
+This source code is compatible with Apache Common DBCP versions v1, v2.
 
 ## Usage
 
