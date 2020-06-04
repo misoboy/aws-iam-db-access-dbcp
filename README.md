@@ -8,15 +8,15 @@ AWS IAM Database Authentication using Apache Common DBCP connection pool
 git clone https://github.com/misoboy/aws-iam-db-access-dbcp.git
 ```
 
-## Examples
-
-```cmd
-mvn clean test -Daws.profile=aws cli profile name
-```
-
 ## Overview
 
-You need to modify the jdbc connection properties. `application-test.profiles`
+AWS RDS, Redshift IAM Access authentication method is applied to Apache Common DBCP2 to create a token when a connection pool is created, and connect to the database.
+
+## Usage
+
+The example is implemented as a Junit Test case to create a Connection.
+
+You need to modify the jdbc connection properties. `test/resources/application-test.profiles`
 
 ```properties
 # Region
@@ -42,4 +42,33 @@ datasource.redshift.driverClassName=com.amazon.redshift.jdbc.Driver
 datasource.redshift.url=
 ```
 
-Enjoy!
+Set AWS CLI authentication information for your environment.
+
+Edit `$USER_HOME/.aws/config`.
+```
+[default]
+output = json
+region = ap-northeast-2
+
+[my-profile]
+output = json
+region = ap-northeast-2
+```
+
+Edit `$USER_HOME/.aws/credentials`.
+```
+[default]
+aws_access_key_id = ...
+aws_secret_access_key = ...
+
+[my-profile]
+aws_access_key_id = ...
+aws_secret_access_key = ...
+```
+
+Go to the project workspace root path.
+Run Maven Junit Test case.
+
+```cmd
+mvn clean test -Daws.profile=If omitted, the default profile is used.
+```
