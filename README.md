@@ -18,7 +18,7 @@ This source code is compatible with Apache Common DBCP versions v1, v2.
 
 The example is implemented as a Junit Test case to create a Connection.
 
-You need to modify the jdbc connection properties. `test/resources/application-test.profiles`
+You need to modify the jdbc connection properties. `test/resources/application-test.properties`
 
 ```properties
 # Region
